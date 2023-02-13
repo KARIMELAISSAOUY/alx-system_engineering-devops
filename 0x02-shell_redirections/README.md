@@ -1,25 +1,30 @@
 ##0x02-shell-redirections
+---
+#ALX
+---
+~~Shell, I/O Redirections and Filters~~
+---
 ********************
-echo
+-echo
 
-cat
+-cat
 
-head
+-head
 
-tail
+-tail
 
-find
+-find
 
-wc
+-wc
 
-sort
+-sort
 
-uniq
+-uniq
 
-grep
+-grep
 
-tr
+-tr
 
-rev
+-rev
 
-cut
+-cut
