@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-# This script accepts one argument and passes it to a regular expression...
-# This Methode
-# This script should output: [RECEIVER],[FLAGS],[SENDER]
+# This Script accepts one argument and passes it to a regular expression...
+# matching method()
+# This Script should output:[SENDER],[RECEIVER],[FLAGS]...
 
 puts ARGV[0].scan(/(?<=from:|to:|flags:).+?(?=\])/).join(',')
