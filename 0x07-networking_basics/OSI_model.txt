@@ -1,0 +1,35 @@
+Questions:
+
+What is the OSI model?
+
+-->The OSI model is a conceptual model that characterizes the communication functions of a telecommunication system without regard to their underlying internal structure and technology
+---
+The OSI (Open Systems Interconnection) model is a conceptual model that characterizes the communication functions of a telecommunication system without regard to their underlying internal structure and technology. It provides a framework for understanding and describing how different components of a network interact and communicate with each other.
+
+The OSI model consists of seven layers, each representing a specific set of functions and protocols. These layers are designed to work together to facilitate the transmission of data across a network. The layers, from the lowest to the highest level, are:
+
+Physical Layer: This layer deals with the physical transmission of data over a communication channel. It defines specifications such as voltage levels, cable types, and connectors.
+
+Data Link Layer: The data link layer provides reliable data transfer between two directly connected nodes. It handles error detection and correction, as well as framing, flow control, and access to the physical medium.
+
+Network Layer: The network layer is responsible for logical addressing and routing of data packets across different networks. It determines the optimal path for data transmission and handles network congestion.
+
+Transport Layer: The transport layer ensures reliable and efficient end-to-end delivery of data. It provides mechanisms for segmentation, reassembly, error recovery, and flow control.
+
+Session Layer: The session layer establishes, maintains, and terminates communication sessions between applications. It manages the synchronization and coordination of data exchange and supports features like session checkpoints and recovery.
+
+Presentation Layer: The presentation layer is responsible for data representation, encryption, and compression. It translates data from the application format to a common format for transmission and handles data encryption and decryption.
+
+Application Layer: The application layer interacts directly with the end-user applications. It provides a means for applications to access network services, such as email, file transfer, and remote login.
+
+The OSI model provides a standardized framework that allows different network technologies and protocols to interoperate effectively. It serves as a reference model for network design, troubleshooting, and the development of networking standards.
+
+
+
+---
+How is the OSI model organized?
+
+-->From the lowest to the highest level
+
+---
+The OSI (Open Systems Interconnection) model is organized from the lowest to the highest level. It follows a hierarchical structure with each layer building upon the functionalities provided by the lower layers. The layers are arranged in a specific order to define the different aspects of network communication and to facilitate interoperability between different systems and technologies. The model is not organized alphabetically or randomly but rather in a deliberate and systematic manner.
