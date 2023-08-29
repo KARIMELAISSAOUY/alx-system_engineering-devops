@@ -1,55 +1,27 @@
 # Add Stable Version of nginx :
-exec { 'add nginx stable repo':
-  command => 'sudo add-apt-repository ppa:nginx/stable',
-  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  unless  => 'apt-cache policy nginx | grep -q "nginx/stable"',
-  require => Class['apt'],
+# Install NginX
+# With puppet
+
+exec { 'apt-get-update':
+  command => '/usr/bin/apt-get update',
 }
 
-# Update software packages list
-class { 'apt': }
-
-# Install nginx
 package { 'nginx':
-  ensure => 'installed',
+  ensure  => installed,
+  require => Exec['apt-get-update'],
 }
 
-# Allow HTTP
-firewall { 'allow HTTP':
-  port   => 80,
-  proto  => 'tcp',
-  action => 'accept',
-}
-
-# Change folder rights
-file { '/var/www':
-  ensure => 'directory',
-  mode   => '0755',
-  recurse => true,
-}
-
-# Create index file
 file { '/var/www/html/index.html':
-  content => "Hello World!\n",
-}
-
-# Create 404 page
-file { '/var/www/html/404.html':
-  content => "Ceci n'est pas une page\n",
-}
-
-# Configure Nginx
-file { '/etc/nginx/sites-enabled/default':
-  ensure  => file,
-  content => template('module/nginx.conf.erb'),
+  content => 'Hello World!',
   require => Package['nginx'],
-  notify  => Service['nginx'],
 }
 
-# Restart Nginx
+exec {'redirect_me':
+  command  => 'sed -i "24i\	rewrite ^/redirect_me https://www.youtube.com permanent;" /etc/nginx/sites-available/default',
+  provider => 'shell'
+}
+
 service { 'nginx':
-  ensure => running,
-  enable => true,
+  ensure  => running,
   require => Package['nginx'],
-  subscribe => File['/etc/nginx/sites-enabled/default'],
 }
