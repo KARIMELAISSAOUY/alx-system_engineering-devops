@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script uses a REST API to retrieve information about a given employee's TODO list progress.
+This script uses a REST API to retrieve information about
+a given employee's TODO list progress.
 """
 from requests import get
 from sys import argv
@@ -35,3 +36,4 @@ if __name__ == '__main__':
     # Print the titles of completed tasks
     print('\n'.join(["\t " + task.get('title') for task in todos.json()
                      if task.get('userId') == int(userId) and task.get('completed')]))
+
