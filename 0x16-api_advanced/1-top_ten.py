@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''A module containing functions for working with the Reddit API.
+'''Reddit API.
 '''
 import requests
 
@@ -31,3 +31,5 @@ def get_top_posts(subreddit, sort='top', limit=10):
         return top_posts
     else:
         raise Exception(f"Failed to retrieve posts from {subreddit}. Status code: {res.status_code}")
+
+
